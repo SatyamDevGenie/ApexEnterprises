@@ -1,0 +1,64 @@
+{
+  "compilerOptions": {
+    /* Language and Version */
+    "target": "ES2021", // Modern JS features but with good support
+    "module": "CommonJS", // Node.js uses CommonJS
+
+    /* Strict Type-Checking */
+    "strict": true, // Enable all strict type-checking options
+    "noImplicitAny": true, // No variables without types
+    "strictNullChecks": true, // Prevent null/undefined issues
+    "strictPropertyInitialization": true, // Ensure class properties are initialized
+
+    /* Module Resolution */
+    "moduleResolution": "node", // Node-style module resolution
+    "esModuleInterop": true, // Allow default imports from CJS modules
+    "skipLibCheck": true, // Skip type checks on third-party libraries
+
+    /* Paths and Base URL */
+    "baseUrl": ".", // Base directory for resolving non-relative paths
+    "paths": {
+      "@controllers/*": ["controllers/*"],
+      "@models/*": ["models/*"],
+      "@routes/*": ["routes/*"],
+      "@middlewares/*": ["middlewares/*"]
+    },
+
+    /* Output Settings */
+    "outDir": "./dist", // Output compiled files to 'dist' folder
+    "rootDir": ".", // Root directory for input files
+
+    /* Code Transformation */
+    "sourceMap": true, // Generate .map files for debugging
+    "removeComments": true, // Remove comments in compiled code
+
+    /* Decorators (Optional) */
+    "experimentalDecorators": true, // Support for decorators
+    "emitDecoratorMetadata": true, // Emit metadata for decorators (e.g., for TypeORM)
+
+    /* JSX Support (if using React) */
+    // "jsx": "react-jsx",
+
+    /* Type Checking */
+    "typeRoots": ["./node_modules/@types", "./types"],
+
+    /* Performance Optimizations */
+    "incremental": true, // Speed up subsequent builds
+    "noUnusedLocals": true, // Warn on unused variables
+    "noUnusedParameters": true, // Warn on unused parameters
+    "noFallthroughCasesInSwitch": true, // Ensure all switch cases are handled
+    "forceConsistentCasingInFileNames": false // Enforce consistent file naming
+  },
+
+  /* Include and Exclude Files */
+  "include": [
+    "controllers",
+    "models",
+    "prisma",
+    "routes",
+    "middlewares",
+    "types",
+    "server.ts" // or "index.ts"
+  ],
+  "exclude": ["node_modules", "dist", "**/*.test.ts"]
+}
